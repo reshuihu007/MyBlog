@@ -31,53 +31,90 @@ html{
 .page1{
   background: url("@{url}/bg.svg") no-repeat center center;
   background-size: cover; /* 铺满屏幕 */
-  width: 100%;height: 100%;
   z-index: 0;
+  position: relative;
   span{
-    font-size: .96rem;
-    //color: extract(@cL, 2);
+    color: extract(@cL, 4);
   }
+
   div{
     position: absolute;
+    z-index: 2;
+    opacity: 1;
+  }
+  div:nth-child(1){
     width: 4.66rem;
     height: 1.38rem;
     left: .55rem;
     top: 4.4rem;
-    z-index: 2;
     transform: rotateZ(322deg);
     display: block;
     text-align: center;
-    opacity: 1;
-    color: extract(@cL, 4);
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
+    span{
+      font-size: .96rem;
+    }
+
     //animation: 2s ease 0.5s normal both 1 running fadeIn;
   }
-  img{
+  div:nth-child(2){
+    //background: url("@{url}/square.svg")no-repeat ;
+    //background-size: cover;
+    background: extract(@cL,6);
+    transform: rotateZ(322deg);
+    width: 4.7rem;
+    height: .05rem;
+    left: 2.2rem;
+    top: 2.8rem;
+  }
+  div:nth-child(3){
+    background:  extract(@cL,5) ;
+    transform: rotateZ(322deg);
+    width: 4.7rem;
+    height: .05rem;
+    left: -0.9rem;
+    top: 7.2rem;
+  }
+  div:nth-child(4 ){
+    //box-sizing: border-box;
+    width: 1.7rem;
+    height: 1.39rem;
+    left: 3.7rem;
+    top: 5.1rem;
+    z-index: 5;
+    transform: rotateZ(21deg);
+    display: block;
+    //background-color: extract(@cL,4);
+    //z-index: 2;
+    img{
+      width: 100%;height: 100%;
+      //opacity: .2;
+      //z-index: 3;
+    }
+    span{
+      .font(@v:24);
+    color:extract(@cL,6);
+      z-index: 5;
+    }
+  }
+  span:nth-child(6){
+    .font(@v:8);
     position: absolute;
+    bottom: .02rem; right: .1rem  ;
   }
-  img:nth-child(1){
-    width: 2rem;height: 2rem;left: .61rem;  top:1.2rem;
-  }
-  img:nth-child(2){
-    width: .9rem;height: .9rem;left: .1rem;  top:3.98rem;
-  }
-  img:nth-child(3){
-    width: 3rem;height: .6rem;left: .12rem;  top:4rem;
-  }
+
+
 }
 
 /*---------------- PAGE2 -------------------*/
 .page2{
   background: url("@{url}/bg2.svg") no-repeat center center;
   background-size: cover; /* 铺满屏幕 */
-  width: 100%;height: 100%;
   z-index: 0;
 }
 /*---------------- PAGE3 -------------------*/
 .page3{
   background: url("@{url}/bg3.svg") no-repeat center center;
   background-size: cover; /* 铺满屏幕 */
-  width: 100%;height: 100%;
   z-index: 0;
 }
 
@@ -85,7 +122,6 @@ html{
 .page4{
   background: url("@{url}/bg4.svg") no-repeat center center;
   background-size: cover; /* 铺满屏幕 */
-  width: 100%;height: 100%;
   z-index: 0;
 }
 
@@ -93,15 +129,12 @@ html{
 .page5{
   background: url("@{url}/bg5.svg") no-repeat center center;
   background-size: cover; /* 铺满屏幕 */
-  width: 100%;height: 100%;
   z-index: 0;
 }
 
 /*---------------- PAGE6 -------------------*/
 .page6{
-  background: url("@{url}/bg6.svg") no-repeat top center;
-  background-size: cover; /* 铺满屏幕 */
-
-  width: 100%;height: 100%;
+  background: url("@{url}/bg6.svg") no-repeat center center ;
+  background-size: cover ; /* 铺满屏幕 */
   z-index: 0;
 }
