@@ -1,0 +1,17 @@
+@cL:#000,#fff ,#555,rgb(250, 247, 247);
+
+@url:'../image';
+
+.font(@v:14,@w:normal) {
+  font-size: unit(@v, px);
+  font-weight: @w;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif,'Microsoft Yahei',Tahoma,Arial;
+}
+
+.transition(@property: all,@duration: 1s,@time-function: linear,@delay: 0s) {
+  -webkit-transition: @arguments;
+  -moz-transition: @arguments;
+  -ms-transition: @arguments;
+  -o-transition: @arguments;
+  transition: @arguments;
+}
