@@ -1,4 +1,5 @@
-@import (reference) "public";
+
+@import (reference) "animate";@import (reference) "public";
 
 /*---------------- html body  -------------------*/
 html,body,.main,.swiper-container,.swiper-slide{
@@ -14,25 +15,74 @@ html{
   overflow: hidden;
   border-left: 1px solid extract(@cL, 2);
   border-right: 1px solid extract(@cL, 2);
-
 }
 
 /*---------------- PUBLIC  -------------------*/
 
 /*---------------- MUSIC -------------------*/
+.music {
+  //display: none;
+  position: absolute;
+  top: .2rem;
+  right: .2rem;
+  z-index: 10;
+  width: .6rem;
+  height: .6rem;
+  background: url("@{url}/music.svg") no-repeat;
+  background-size: 100% 100%;
+}
 
+.music audio {
+  display: none;
+}
+
+.music.move {
+  -webkit-animation: musicMove 1s linear 0s infinite both;
+  animation: musicMove 1s linear 0s infinite both;
+}
+
+@-webkit-keyframes musicMove {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes musicMove {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 
 /*---------------- ARROW -------------------*/
 
 
 
 /*---------------- PAGE1 -------------------*/
+.page{
 
+  z-index: 0;
+  position: relative;
+  & .page_tab{
+    color: extract(@cL, 4);
+    .font(@v:.1);
+    position: absolute;
+    bottom: .02rem; right: .1rem  ;
+  }
+}
+/*---------------- PAGE1 -------------------*/
 .page1{
   background: url("@{url}/bg.svg") no-repeat center center;
   background-size: cover; /* 铺满屏幕 */
-  z-index: 0;
-  position: relative;
   span{
     color: extract(@cL, 4);
   }
@@ -42,6 +92,7 @@ html{
     z-index: 2;
     opacity: 1;
   }
+
   div:nth-child(1){
     width: 4.66rem;
     height: 1.38rem;
@@ -56,6 +107,7 @@ html{
 
     //animation: 2s ease 0.5s normal both 1 running fadeIn;
   }
+
   div:nth-child(2){
     //background: url("@{url}/square.svg")no-repeat ;
     //background-size: cover;
@@ -66,41 +118,54 @@ html{
     left: 2.2rem;
     top: 2.8rem;
   }
+
   div:nth-child(3){
     background:  extract(@cL,5) ;
     transform: rotateZ(322deg);
     width: 4.7rem;
     height: .05rem;
-    left: -0.9rem;
+    left: -0.98rem;
     top: 7.2rem;
   }
-  div:nth-child(4 ){
-    //box-sizing: border-box;
+
+  div:nth-child(4){
+    position: relative;
     width: 1.7rem;
     height: 1.39rem;
+    line-height: 1.39rem;
+    text-align: center;
     left: 3.7rem;
     top: 5.1rem;
-    z-index: 5;
+    z-index: 3;
     transform: rotateZ(21deg);
     display: block;
     //background-color: extract(@cL,4);
     //z-index: 2;
-    img{
+    & img{
       width: 100%;height: 100%;
       //opacity: .2;
       //z-index: 3;
     }
-    span{
+    & span{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.7rem;
+      height: 1.39rem;
+      padding-left: 0.1rem;
+
       .font(@v:24);
-    color:extract(@cL,6);
-      z-index: 5;
+      color:extract(@cL,5);
+      z-index: 4;
+      //transform: rotateZ(21deg);
     }
   }
-  span:nth-child(6){
-    .font(@v:8);
-    position: absolute;
-    bottom: .02rem; right: .1rem  ;
-  }
+
+  //span:nth-child(5){
+  //  .font(@v:8);
+  //  position: absolute;
+  //  bottom: .02rem; right: .1rem  ;
+  //}
 
 
 }
@@ -109,32 +174,226 @@ html{
 .page2{
   background: url("@{url}/bg2.svg") no-repeat center center;
   background-size: cover; /* 铺满屏幕 */
-  z-index: 0;
+
+  div{
+    position: absolute;
+  }
+
+  & .page2_d1{
+    background: url("@{url}/touxiang.png") ;
+    width: 1.94rem;
+    height: 1.94rem;
+    left: 2.13rem;
+    top: .5rem;
+    border-radius: 50%;
+    //animation: fadeIn 3s ease 0s 1 both;
+  }
+
+  & .page2_d2{
+    background: url("@{url}/yellow.svg")no-repeat center center;
+    width: .03rem;
+    height: 100%;
+    left: .8rem;
+    top:3rem;
+    //animation: 5s ease 0s normal both 1 running fadeInDown;
+  }
+
+  & .page2_d3{
+    background: url("@{url}/blue.svg")no-repeat center center;
+    width: .03rem;
+    height: 100%;
+    left: .8rem;
+    top: 6.48rem;
+    //animation: fadeInLeft 5s ease 3s 1 both;
+  }
+
+  & .pag2_d4{
+    width: .34rem;
+    height: .34rem;
+    left:.65rem;
+    //animation: twisterInDown 2s ease 0s normal both 1 running ;
+  }
+  
+  & .page2_d4_1{
+    background: url("@{url}/yelx.svg") no-repeat ;
+    top: 3.5rem;
+  }
+
+  & .page2_d4_2{
+    background: url("@{url}/yelx.svg") no-repeat ;
+    top: 4.75rem;
+  }
+
+  & .page2_d4_3{
+    background: url("@{url}/yelx.svg") no-repeat ;
+    top: 6rem;
+  }
+
+  & .page2_d4_4{
+    background: url("@{url}/bluelx.svg") no-repeat ;
+    top: 7.25rem;
+  }
+
+  & .page2_d4_5{
+    background: url("@{url}/bluelx.svg") no-repeat ;
+    top: 8.5rem;
+  }
+
+  & .page2_d4_6{
+    background: url("@{url}/bluelx.svg") no-repeat ;
+    width: .34rem;
+    height: .34rem;
+    top: 9.75rem;
+    left: .64rem;
+  }
+
+  & span{
+    color: extract(@cL, 4);
+    position: absolute;
+    //animation: fadeInRight 1s ease 0s 1 both;
+  }
+  
+  & .pag2_s{
+    .font(@v:21,@w:500);
+    letter-spacing:.06rem;
+    left: 1.3rem;
+  }
+
+  & .page2_s1{
+    top: 3.4rem;
+
+  }
+  
+  & .page2_s2{
+    top: 4.65rem;
+
+  }
+  
+  & .page2_s3{
+    top: 5.9rem;
+  }
+  
+  & .page2_s4{
+    top: 7.15rem;
+  }
+  
+  & .page2_s5{
+    top: 8.4rem;
+  }
+  
+  & .page2_s6{
+    top: 9.65rem;
+  }
+
+  & .page2_s8{
+    .font(@v:8,@w:normal);
+    bottom: .02rem; right: .1rem  ;
+  }
+
+  & .page2_d5{
+    //background: url("@{url}/jiantouYe.svg")no-repeat;
+    width: 2rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    text-align: center;
+    left: 4.1rem;
+    top: 2.3rem;
+    //z-index: 3;
+    transform: rotateZ(19deg);
+    display: block;
+    & img{
+      width: 100%;
+      height: 100%;
+    }
+    & .page2_s7{
+      width: 2.2rem;
+      height: 1.4rem;
+      top:0;left: .04rem;
+      .font(@v:20);
+      //z-index: 3;
+    }
+  }
 }
 /*---------------- PAGE3 -------------------*/
 .page3{
   background: url("@{url}/bg3.svg") no-repeat center center;
   background-size: cover; /* 铺满屏幕 */
-  z-index: 0;
+
+  span{
+    display: block;
+  }
+  div{
+    position: absolute;
+  }
+  ul {
+    position: absolute;
+    overflow: hidden;
+    background: url("@{url}/blueStrip.svg") no-repeat;
+    transform: rotateZ(19deg);
+    li {
+      float: right;
+      display: inline;
+      width: .8rem;
+      height: 2.4rem;
+      //line-height: 2.8rem;
+      word-wrap: break-word;
+      word-break: normal;
+      text-align: center;
+      vertical-align:middle;
+      .font(@v:.46);
+      color: extract(@cL, 4);
+    }
+  }
+
+  & .page3_u1_1{
+    top: 2.5rem;
+    left: 0.8rem;
+
+  }
+  & .page3_u1_2{
+    top: 5.1rem;
+    left: 1.1rem;
+    //transform: rotateZ(29deg);
+  }
+  & .page3_u1_3{
+    top: 3.2rem;
+    left: 2.9rem;
+    //transform: rotateZ(29deg);
+  }
+  & .page3_u1_4{
+    top: 5.8rem;
+    left: 3.2rem;
+    //transform: rotateZ(29deg);
+  }
+  & .page3_u1_5{
+    top: 3.9rem;
+    left: 5rem;
+    //transform: rotateZ(29deg);
+  }
+
+
 }
 
 /*---------------- PAGE4-------------------*/
 .page4{
   background: url("@{url}/bg4.svg") no-repeat center center;
   background-size: cover; /* 铺满屏幕 */
-  z-index: 0;
+
 }
 
 /*---------------- PAGE5 -------------------*/
 .page5{
   background: url("@{url}/bg5.svg") no-repeat center center;
   background-size: cover; /* 铺满屏幕 */
-  z-index: 0;
+
 }
 
 /*---------------- PAGE6 -------------------*/
 .page6{
   background: url("@{url}/bg6.svg") no-repeat center center ;
   background-size: cover ; /* 铺满屏幕 */
-  z-index: 0;
+
 }
+
+
+

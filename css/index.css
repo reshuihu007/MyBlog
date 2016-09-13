@@ -1,0 +1,149 @@
+/*---------------- html body  -------------------*/
+html,
+body,
+.main,
+.swiper-container,
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+html {
+  font-size: 100px;
+}
+.main {
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+/*---------------- PUBLIC  -------------------*/
+/*---------------- MUSIC -------------------*/
+/*---------------- ARROW -------------------*/
+/*---------------- PAGE1 -------------------*/
+.page1 {
+  background: url("../image/bg.svg") no-repeat center center;
+  background-size: cover;
+  /* 铺满屏幕 */
+  z-index: 0;
+  position: relative;
+}
+.page1 span {
+  color: #faf7f7;
+}
+.page1 div {
+  position: absolute;
+  z-index: 2;
+  opacity: 1;
+}
+.page1 div:nth-child(1) {
+  width: 4.66rem;
+  height: 1.38rem;
+  left: .55rem;
+  top: 4.4rem;
+  transform: rotateZ(322deg);
+  display: block;
+  text-align: center;
+}
+.page1 div:nth-child(1) span {
+  font-size: .96rem;
+}
+.page1 div:nth-child(2) {
+  background: #59c7f9;
+  transform: rotateZ(322deg);
+  width: 4.7rem;
+  height: .05rem;
+  left: 2.2rem;
+  top: 2.8rem;
+}
+.page1 div:nth-child(3) {
+  background: #ffea00;
+  transform: rotateZ(322deg);
+  width: 4.7rem;
+  height: .05rem;
+  left: -0.98rem;
+  top: 7.2rem;
+}
+.page1 div:nth-child(4) {
+  position: relative;
+  width: 1.7rem;
+  height: 1.39rem;
+  line-height: 1.39rem;
+  text-align: center;
+  left: 3.7rem;
+  top: 5.1rem;
+  z-index: 3;
+  transform: rotateZ(21deg);
+  display: block;
+}
+.page1 div:nth-child(4) img {
+  width: 100%;
+  height: 100%;
+}
+.page1 div:nth-child(4) span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.7rem;
+  height: 1.39rem;
+  padding-left: 0.1rem;
+  font-size: 24px;
+  font-weight: normal;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif, 'Microsoft Yahei', Tahoma, Arial;
+  color: #ffea00;
+  z-index: 4;
+}
+.page1 span:nth-child(5) {
+  font-size: 8px;
+  font-weight: normal;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif, 'Microsoft Yahei', Tahoma, Arial;
+  position: absolute;
+  bottom: .02rem;
+  right: .1rem  ;
+}
+/*---------------- PAGE2 -------------------*/
+.page2 {
+  background: url("../image/bg2.svg") no-repeat center center;
+  background-size: cover;
+  /* 铺满屏幕 */
+  z-index: 0;
+  position: relative;
+}
+.page2 div {
+  position: absolute;
+}
+.page2.page2_d1 {
+  background: url("../image/touxiang.png");
+  width: 0.94rem;
+  height: 0.94rem;
+  left: 1.13rem;
+  top: .2rem;
+}
+/*---------------- PAGE3 -------------------*/
+.page3 {
+  background: url("../image/bg3.svg") no-repeat center center;
+  background-size: cover;
+  /* 铺满屏幕 */
+  z-index: 0;
+}
+/*---------------- PAGE4-------------------*/
+.page4 {
+  background: url("../image/bg4.svg") no-repeat center center;
+  background-size: cover;
+  /* 铺满屏幕 */
+  z-index: 0;
+}
+/*---------------- PAGE5 -------------------*/
+.page5 {
+  background: url("../image/bg5.svg") no-repeat center center;
+  background-size: cover;
+  /* 铺满屏幕 */
+  z-index: 0;
+}
+/*---------------- PAGE6 -------------------*/
+.page6 {
+  background: url("../image/bg6.svg") no-repeat center center;
+  background-size: cover ;
+  /* 铺满屏幕 */
+  z-index: 0;
+}
