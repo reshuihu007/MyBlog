@@ -1701,13 +1701,13 @@ Copyright (c) 2015 Daniel Eden
         animation-timing-function: ease-out;
     }
 
-    40% {
+    /*40% {
         -webkit-transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
         transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
         -webkit-animation-timing-function: ease-out;
         animation-timing-function: ease-out;
     }
-
+*/
     50% {
         -webkit-transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
         transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
@@ -1738,13 +1738,13 @@ Copyright (c) 2015 Daniel Eden
         animation-timing-function: ease-out;
     }
 
-    40% {
+   /* 40% {
         -webkit-transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
         transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
         -webkit-animation-timing-function: ease-out;
         animation-timing-function: ease-out;
     }
-
+*/
     50% {
         -webkit-transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
         transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
@@ -3293,19 +3293,21 @@ Copyright (c) 2015 Daniel Eden
     animation-name:twisterInDown
 }
 
-@-webkit-keyframes flip {
+/*@-webkit-keyframes flip {
     0% {
-        -webkit-transform:perspective(400px) rotate3d(0,1,0,-360deg);
-        transform:perspective(400px) rotate3d(0,1,0,-360deg);
+        -webkit-transform:perspective(8rem) rotate3d(0,1,0,-360deg);
+        transform:perspective(8rem) rotate3d(0,1,0,-360deg);
         -webkit-animation-timing-function:ease-out;
         animation-timing-function:ease-out
     }
+
     40% {
-        -webkit-transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-190deg);
-        transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-190deg);
+        -webkit-transform:perspective(8rem) translate3d(0,0,150px) rotate3d(0,1,0,-190deg);
+        transform:perspective(8rem) translate3d(0,0,150px) rotate3d(0,1,0,-190deg);
         -webkit-animation-timing-function:ease-out;
         animation-timing-function:ease-out
     }
+
     50% {
         -webkit-transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-170deg);
         transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-170deg);
@@ -3327,32 +3329,33 @@ Copyright (c) 2015 Daniel Eden
 }
 @keyframes flip {
     0% {
-        -webkit-transform:perspective(400px) rotate3d(0,1,0,-360deg);
-        transform:perspective(400px) rotate3d(0,1,0,-360deg);
+        -webkit-transform:perspective(8rem) rotate3d(0,1,0,-360deg);
+        transform:perspective(8rem) rotate3d(0,1,0,-360deg);
         -webkit-animation-timing-function:ease-out;
         animation-timing-function:ease-out
     }
+
     40% {
-        -webkit-transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-190deg);
-        transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-190deg);
+        -webkit-transform:perspective(8rem) translate3d(0,0,150px) rotate3d(0,1,0,-190deg);
+        transform:perspective(8rem) translate3d(0,0,150px) rotate3d(0,1,0,-190deg);
         -webkit-animation-timing-function:ease-out;
         animation-timing-function:ease-out
     }
     50% {
-        -webkit-transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-170deg);
-        transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-170deg);
+        -webkit-transform:perspective(8rem) translate3d(0,0,150px) rotate3d(0,1,0,-170deg);
+        transform:perspective(8rem) translate3d(0,0,150px) rotate3d(0,1,0,-170deg);
         -webkit-animation-timing-function:ease-in;
         animation-timing-function:ease-in
     }
     80% {
-        -webkit-transform:perspective(400px) scale3d(.95,.95,.95);
-        transform:perspective(400px) scale3d(.95,.95,.95);
+        -webkit-transform:perspective(8rem) scale3d(.95,.95,.95);
+        transform:perspective(8rem) scale3d(.95,.95,.95);
         -webkit-animation-timing-function:ease-in;
         animation-timing-function:ease-in
     }
     100% {
-        -webkit-transform:perspective(400px);
-        transform:perspective(400px);
+        -webkit-transform:perspective(8rem);
+        transform:perspective(8rem);
         -webkit-animation-timing-function:ease-in;
         animation-timing-function:ease-in
     }
@@ -3362,4 +3365,57 @@ Copyright (c) 2015 Daniel Eden
     backface-visibility:visible;
     -webkit-animation-name:flip;
     animation-name:flip
+}*/
+
+@-webkit-keyframes rubberBand {
+    0%,100% {
+        -webkit-transform:scale3d(1,1,1);
+        transform:scale3d(1,1,1)
+    }
+    30% {
+        -webkit-transform:scale3d(1.25,.75,1);
+        transform:scale3d(1.25,.75,1)
+    }
+    40% {
+        -webkit-transform:scale3d(.75,1.25,1);
+        transform:scale3d(.75,1.25,1)
+    }
+    50% {
+        -webkit-transform:scale3d(1.15,.85,1);
+        transform:scale3d(1.15,.85,1)
+    }
+    65% {
+        -webkit-transform:scale3d(.95,1.05,1);
+        transform:scale3d(.95,1.05,1)
+    }
+    75% {
+        -webkit-transform:scale3d(1.05,.95,1);
+        transform:scale3d(1.05,.95,1)
+    }
+}
+@keyframes rubberBand {
+    0%,100% {
+        -webkit-transform:scale3d(1,1,1);
+        transform:scale3d(1,1,1)
+    }
+    30% {
+        -webkit-transform:scale3d(1.25,.75,1);
+        transform:scale3d(1.25,.75,1)
+    }
+    40% {
+        -webkit-transform:scale3d(.75,1.25,1);
+        transform:scale3d(.75,1.25,1)
+    }
+    50% {
+        -webkit-transform:scale3d(1.15,.85,1);
+        transform:scale3d(1.15,.85,1)
+    }
+    65% {
+        -webkit-transform:scale3d(.95,1.05,1);
+        transform:scale3d(.95,1.05,1)
+    }
+    75% {
+        -webkit-transform:scale3d(1.05,.95,1);
+        transform:scale3d(1.05,.95,1)
+    }
 }

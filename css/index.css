@@ -11,22 +11,69 @@ html {
   font-size: 100px;
 }
 .main {
-  background-color: #000;
+  background-color: #555;
   position: relative;
   overflow: hidden;
-  border-left: 1px solid #fff;
-  border-right: 1px solid #fff;
 }
 /*---------------- PUBLIC  -------------------*/
 /*---------------- MUSIC -------------------*/
+.music {
+  position: absolute;
+  top: .2rem;
+  right: .2rem;
+  z-index: 10;
+  width: .6rem;
+  height: .6rem;
+  background: url("../image/music.svg") no-repeat;
+  background-size: 100% 100%;
+}
+.music audio {
+  display: none;
+}
+.music.move {
+  -webkit-animation: musicMove 1s linear 0s infinite both;
+  animation: musicMove 1s linear 0s infinite both;
+}
+@-webkit-keyframes musicMove {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes musicMove {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 /*---------------- ARROW -------------------*/
+/*---------------- PAGE1 -------------------*/
+.page {
+  z-index: 0;
+  position: relative;
+}
+.page .page_tab {
+  color: #faf7f7;
+  font-size: 0.1rem;
+  font-weight: normal;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif, 'Microsoft Yahei', Tahoma, Arial;
+  position: absolute;
+  bottom: .02rem;
+  right: .1rem  ;
+}
 /*---------------- PAGE1 -------------------*/
 .page1 {
   background: url("../image/bg.svg") no-repeat center center;
   background-size: cover;
   /* 铺满屏幕 */
-  z-index: 0;
-  position: relative;
 }
 .page1 span {
   color: #faf7f7;
@@ -87,63 +134,248 @@ html {
   width: 1.7rem;
   height: 1.39rem;
   padding-left: 0.1rem;
-  font-size: 24px;
+  font-size: 0.54rem;
   font-weight: normal;
   font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif, 'Microsoft Yahei', Tahoma, Arial;
   color: #ffea00;
   z-index: 4;
-}
-.page1 span:nth-child(5) {
-  font-size: 8px;
-  font-weight: normal;
-  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif, 'Microsoft Yahei', Tahoma, Arial;
-  position: absolute;
-  bottom: .02rem;
-  right: .1rem  ;
 }
 /*---------------- PAGE2 -------------------*/
 .page2 {
   background: url("../image/bg2.svg") no-repeat center center;
   background-size: cover;
   /* 铺满屏幕 */
-  z-index: 0;
-  position: relative;
 }
 .page2 div {
   position: absolute;
 }
-.page2.page2_d1 {
+.page2 .page2_d1 {
   background: url("../image/touxiang.png");
-  width: 0.94rem;
-  height: 0.94rem;
-  left: 1.13rem;
-  top: .2rem;
+  width: 1.94rem;
+  height: 1.94rem;
+  left: 2.13rem;
+  top: .5rem;
+  border-radius: 50%;
+}
+.page2 .page2_d2 {
+  background: url("../image/yellow.svg") no-repeat center center;
+  width: .03rem;
+  height: 100%;
+  left: .8rem;
+  top: 3rem;
+}
+.page2 .page2_d3 {
+  background: url("../image/blue.svg") no-repeat center center;
+  width: .03rem;
+  height: 100%;
+  left: .8rem;
+  top: 6.48rem;
+}
+.page2 .pag2_d4 {
+  width: .34rem;
+  height: .34rem;
+  left: .65rem;
+}
+.page2 .page2_d4_1 {
+  background: url("../image/yelx.svg") no-repeat;
+  top: 3.5rem;
+}
+.page2 .page2_d4_2 {
+  background: url("../image/yelx.svg") no-repeat;
+  top: 4.75rem;
+}
+.page2 .page2_d4_3 {
+  background: url("../image/yelx.svg") no-repeat;
+  top: 6rem;
+}
+.page2 .page2_d4_4 {
+  background: url("../image/bluelx.svg") no-repeat;
+  top: 7.25rem;
+}
+.page2 .page2_d4_5 {
+  background: url("../image/bluelx.svg") no-repeat;
+  top: 8.5rem;
+}
+.page2 .page2_d4_6 {
+  background: url("../image/bluelx.svg") no-repeat;
+  width: .34rem;
+  height: .34rem;
+  top: 9.75rem;
+  left: .64rem;
+}
+.page2 span {
+  color: #faf7f7;
+  position: absolute;
+}
+.page2 .pag2_s {
+  font-size: 0.44rem;
+  font-weight: 500;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif, 'Microsoft Yahei', Tahoma, Arial;
+  letter-spacing: .06rem;
+  left: 1.3rem;
+}
+.page2 .page2_s1 {
+  top: 3.4rem;
+}
+.page2 .page2_s2 {
+  top: 4.65rem;
+}
+.page2 .page2_s3 {
+  top: 5.9rem;
+}
+.page2 .page2_s4 {
+  top: 7.15rem;
+}
+.page2 .page2_s5 {
+  top: 8.4rem;
+}
+.page2 .page2_s6 {
+  top: 9.65rem;
+}
+.page2 .page2_s8 {
+  font-size: 8rem;
+  font-weight: normal;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif, 'Microsoft Yahei', Tahoma, Arial;
+  bottom: .02rem;
+  right: .1rem  ;
+}
+.page2 .page2_d5 {
+  width: 2rem;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  text-align: center;
+  left: 4.1rem;
+  top: 2.3rem;
+  transform: rotateZ(19deg);
+  display: block;
+}
+.page2 .page2_d5 img {
+  width: 100%;
+  height: 100%;
+}
+.page2 .page2_d5 .page2_s7 {
+  width: 2.2rem;
+  height: 1.4rem;
+  top: 0;
+  left: .04rem;
+  font-size: 0.38rem;
+  font-weight: normal;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif, 'Microsoft Yahei', Tahoma, Arial;
 }
 /*---------------- PAGE3 -------------------*/
 .page3 {
   background: url("../image/bg3.svg") no-repeat center center;
   background-size: cover;
   /* 铺满屏幕 */
-  z-index: 0;
+}
+.page3 span {
+  display: block;
+}
+.page3 div {
+  position: absolute;
+}
+.page3 .page3_u1 {
+  position: absolute;
+  overflow: hidden;
+  background: url("../image/blueStrip.svg") no-repeat;
+  transform: rotateZ(19deg);
+  height: 2.4rem;
+  padding: 0 0.1rem;
+}
+.page3 .page3_u1 li {
+  float: right;
+  display: inline;
+  width: .8rem;
+  height: 2.4rem;
+  word-wrap: break-word;
+  word-break: normal;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.46rem;
+  font-weight: normal;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif, 'Microsoft Yahei', Tahoma, Arial;
+  color: #faf7f7;
+}
+.page3 .page3_u1_1 {
+  top: 2.52rem;
+  left: 0.7rem;
+}
+.page3 .page3_u1_1 li {
+  height: 1.4rem;
+  margin-top: .5rem;
+}
+.page3 .page3_u1_2 {
+  top: 5.13rem;
+  left: 1rem;
+}
+.page3 .page3_u1_2 li {
+  height: 1.4rem;
+  margin-top: .5rem;
+}
+.page3 .page3_u1_3 {
+  top: 3.22rem;
+  left: 2.8rem;
+}
+.page3 .page3_u1_3 li {
+  height: 1.8rem;
+  margin-top: .25rem;
+}
+.page3 .page3_u1_4 {
+  top: 5.83rem;
+  left: 3.1rem;
+}
+.page3 .page3_u1_4 li {
+  height: 1.4rem;
+  margin-top: .5rem;
+}
+.page3 .page3_u1_5 {
+  top: 3.92rem;
+  left: 4.9rem;
+}
+.page3 .page3_d6 {
+  width: 2rem;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  text-align: center;
+  left: .1rem;
+  top: .2rem;
+  transform: rotateZ(19deg);
+  display: block;
+}
+.page3 .page3_d6 img {
+  width: 100%;
+  height: 100%;
+}
+.page3 .page3_d6 .page3_s1 {
+  position: absolute;
+  width: 2rem;
+  height: 1.4rem;
+  left: 0.12rem;
+  top: 0rem;
+  color: #faf7f7;
+  font-size: 0.4rem;
+  font-weight: 600;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif, 'Microsoft Yahei', Tahoma, Arial;
+}
+.page3.page3_u2 li {
+  width: .5rem;
+  height: .5rem;
 }
 /*---------------- PAGE4-------------------*/
 .page4 {
   background: url("../image/bg4.svg") no-repeat center center;
   background-size: cover;
   /* 铺满屏幕 */
-  z-index: 0;
 }
 /*---------------- PAGE5 -------------------*/
 .page5 {
   background: url("../image/bg5.svg") no-repeat center center;
   background-size: cover;
   /* 铺满屏幕 */
-  z-index: 0;
 }
 /*---------------- PAGE6 -------------------*/
 .page6 {
   background: url("../image/bg6.svg") no-repeat center center;
   background-size: cover ;
   /* 铺满屏幕 */
-  z-index: 0;
 }
