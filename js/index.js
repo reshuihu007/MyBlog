@@ -1,76 +1,82 @@
 /**
  * Created by meng on 2016/8/28.
  */
-var swiper1 = new Swiper(".swiper-container",{
-    direction:'vertical',
-    loop:true
-    //pagination:'.swiper-pagination',
-    //autoplay:2000
-    ,onSlidChangeEnd:function(swiper){
-        var slideAry =  swiper.slides,
-            curIn = swiper.activeIndex,
-            total= slideAry.length;
-        // 计算id是page？
-        var targetId = 'page';
-        switch (curIn){
-            case 0 : targetId+ total-2; break;
-            case total-1 : targetId+ 1; break;
-            default: targetId+=curIn;
-        }
-        //console.log(slideAry);
-        //->给当前的活动块设置ID即可
-        slideAry[curIn].id = targetId;
-        [].slice.forEach.call(slideAry,function(item,index){
+FastClick.attach(document.body);
 
-        });
-
-    }
-
-
-    ,effect: 'coverflow',
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    coverflow: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows : true
-    }
-
-});
-
+//->REM
 ~function () {
-    var desw = 640,
+    var desW = 640,
         winW = document.documentElement.clientWidth,
-        ratio = winW / desw;
-    var oMain = document.getElementById("main");
-    //->如果当前屏幕的宽度已经大于设计稿了，为了保证图片的良好展示，我们一般都不然过其在继续变大了，以设计稿的宽度为最后宽度，剩余部分
-    if(winW>desw){
-        oMain.style.width = desw+"px";
+        ratio = winW / desW,
+        oMain = document.querySelector('.main');
+    if (winW > desW) {
         oMain.style.margin = '0 auto';
+        oMain.style.width = desW + 'px';
         return;
     }
-    document.documentElement.style.fontSize = ratio*100 +'px';
+    document.documentElement.style.fontSize = ratio * 100 + 'px';
 }();
 
-//var  swiper1 = new Swiper(".swiper-container",{
-//    loop:true, //无缝衔接轮播滚动
-//    pagination:'.swiper-pagination',
-//    autoplay:2000,
-//    // 如果需要前进后退按钮
-//    nextButton: '.swiper-button-next',
-//    prevButton: '.swiper-button-prev',
-//    // 如果需要滚动条
-//    scrollbar: '.swiper-scrollbar',
-//
-//    effect:'cube',//方块
-//    autoplayDisableOnInteraction:false, //操作后还可以继续使用，
-////        paginationType:'progress', //进度图
-//    lazyLoading:true, //图片延时加载
-//    lazyLoadingInPrevNext:true //左右延时加载， 对左右一张做处理
-//    ,onInit:function(swiper1){
-//        console.log(1);
-//    }
-//});  // 实现位置 参数配置信息
+
+//->INIT SWIPER
+new Swiper('.swiper-container', {
+    direction: 'vertical',
+    loop: true,
+    /*当切换结束后,给当前展示的区域添加对应的ID,由此实现对应的动画效果*/
+    onSlideChangeEnd: function (swiper) {
+        //swiper.slides:获取当前一共有多少个活动块(包含LOOP模式先前后多加的两个)
+        //swiper.activeIndex:当前展示这个区域的索引
+        var slideAry = swiper.slides,
+            curIn = swiper.activeIndex,
+            total = slideAry.length;
+
+        //->计算ID是PAGE?
+        var targetId = 'page';
+        switch (curIn) {
+            case 0:
+                targetId += total - 2;
+                break;
+            case (total - 1):
+                targetId += 1;
+                break;
+            default:
+                targetId += curIn;
+        }
+
+        //->给当前的活动快设置ID即可,还要把其余的移除
+        [].forEach.call(slideAry, function (item, index) {
+            if (curIn === index) {
+                item.id = targetId;
+                return;
+            }
+            item.id = null;
+        });
+    }
+});
+
+//->MUSIC
+~function () {
+    var musicMenu = document.getElementById('musicMenu'),
+        musicAudio = document.getElementById('musicAudio');
+
+    musicMenu.addEventListener('click', function () {
+        if (musicAudio.paused) {//->暂停
+            musicAudio.play();
+            musicMenu.className = 'music move';
+            return;
+        }
+        musicAudio.pause();
+        musicMenu.className = 'music';
+    }, false);
+
+    function controlMusic() {
+        musicAudio.volume = 0.1;
+        musicAudio.play();
+        musicAudio.addEventListener('canplay', function () {
+            musicMenu.style.display = 'block';
+            musicMenu.className = 'music move';
+        }, false);
+    }
+
+    window.setTimeout(controlMusic, 1000);
+}();
